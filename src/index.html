@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles/styles.scss">
   <script type="module" src="js/index.js"></script>
-
+  <link rel="icon" href="./images/favicon_wb.ico" type="image/vnd.microsoft.icon">
   <title>Wildberries</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
     <input type="search" class="header__search" placeholder="Я ищу...">
     <button class="header__profile">
       <img src="images/profile_wb.svg" alt="profile image">
-      <span>Профиль</span>
+      <span>Войти</span>
     </button>
     <button class="header__basket">
       <img src="images/basket_wb.svg" alt="basket image">
@@ -29,10 +29,10 @@
   <!-- modal login window start -->
 
   <div class="modal">
-    <div class="modal__dialog">
+    <div class="modal__wrapper modal__hide">
         <div class="modal__content">
             <form action="#">
-                <div class="modal__close" data-close>&times;</div>
+                <div class="modal__close">&times;</div>
                 <div class="modal__title">Войти или создать профиль</div>
                 <div class="user__phone">
                   <label class="user__phone" for="user__phone">Контактный телефон</label>
