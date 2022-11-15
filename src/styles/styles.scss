@@ -1,6 +1,8 @@
-@import "modal_login.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('header.scss');
+@import url('modal_login.scss');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,3 +13,6 @@
     resize: none;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
