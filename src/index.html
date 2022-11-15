@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles/styles.scss">
-  <script src="js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
 
   <title>Wildberries</title>
 </head>
@@ -22,6 +26,56 @@
       <span>Корзина</span>
     </button>
   </header>
+  <!-- modal login window start -->
+
+  <div class="modal">
+    <div class="modal__dialog">
+        <div class="modal__content">
+            <form action="#">
+                <div class="modal__close" data-close>&times;</div>
+                <div class="modal__title">Войти или создать профиль</div>
+                <div class="user__phone">
+                  <label class="user__phone" for="user__phone">Контактный телефон</label>
+                </div>
+                <div class="contact_login">
+                  <div class="user_phone__number">
+                    <select id="country__code">
+                      <option value="Belarus">+375</option>
+                      <option value="Russia">+7</option>
+                      <option value="Armenia">+374</option>
+                      <option value="Georgia">+995</option>
+                    </select>
+
+                    <input required name="phone" type="phone" class="modal__input" id="user__phone">
+                  </div>
+                  <div class="get__code">
+                    <button class="get__code">Получить код</button>
+                  </div>
+                </div>
+            </form>
+            <div class="other__pc">
+              <input class="other__pc_checkbox" type="checkbox" id="other__pc" name="other__pc" checked>
+              <label for="other__pc">Чужой компьютер</label>
+            </div>
+            <div>
+              <div class="specification">
+                Согласен с условиями 
+                <a target=_blank href="https://www.wildberries.by/services/pravila-polzovaniya-torgovoy-ploshchadkoy">
+                  <span>Публичной оферты</span>
+                </a>
+                и 
+                <div class="specification specification__without_icons">
+                <a target=_blank href="https://www.wildberries.by/services/vozvrat-tovara">
+                  <span>правилами возврата</span>
+                </a>
+              </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- modal login window end -->
 
   <main class="main">
   </main>

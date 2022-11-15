@@ -1,0 +1,145 @@
+a{
+    text-decoration: none;
+}
+
+.modal{
+    font-family: 'Roboto', sans-serif;
+    max-width: 420px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
+
+.modal__content{
+    padding: 30px;
+    border: 1px solid rgba($color: #6e7376, $alpha: 0.5);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal__close{
+    position: absolute;
+    font-size: 26px;
+    color: rgba($color: #6e7376, $alpha: 0.5);
+    font-weight: bold;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+}
+
+.modal__title{
+    padding: 30px 0;
+    font-size: 26px;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+.user__phone{
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgba($color: #6e7376, $alpha: 1.0);
+}
+
+.modal__input, select{
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba($color: #6e7376, $alpha: 0.5);
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #6e7376;
+    cursor: pointer;
+}
+
+select{
+    width: 25%;
+    padding-right: 10px;
+}
+
+#user__phone{
+    width: 73%;
+}
+
+.get__code > button{
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid rgba($color: #6e7376, $alpha: 0.5);
+    border-radius: 10px;
+    color: #6e7376;
+    margin-bottom: 15px;
+}
+
+.other__pc{
+    margin: 20px 0;
+}
+
+.other__pc > label{
+    padding-left: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.other__pc_checkbox{
+    position: absolute;
+    top: 74%;
+    left: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba($color: #6e7376, $alpha: 0.5);
+    border-radius: 5px;
+    background-color: rgb(189, 6, 186);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.other__pc_checkbox::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 10px;
+    align-items: center;
+    color: #fff;
+    display: none;
+}
+
+.other__pc_checkbox:checked::after{
+    display: block;
+}
+
+.specification{
+    margin: 0 auto;
+    font-size: 13px;
+    color: #6e7376;
+}
+
+.specification > a{
+    color: black;
+}
+
+.specification::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 12px;
+    align-items: center;
+    color:rgb(189, 6, 186);
+    margin-right: 10px;
+    margin-left: 4px;
+}
+.specification__without_icons{
+margin-left: 30px;
+}
+
+.specification__without_icons::before{
+    content: "\f00c";
+    display: none;
+}
+
