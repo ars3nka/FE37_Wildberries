@@ -5,6 +5,7 @@ const modalOpenBtn = document.querySelector('.header__profile')
 const modalCloseBtn = document.querySelector('.modal__close');
 const phoneInput = document.querySelector('input[type = "phone"');
 let inputPhoneMask = new Inputmask(' (99) 999-99-99');
+const inputUserPhone = document.querySelector('.modal__input')
 
 inputPhoneMask.mask(phoneInput)
 
@@ -17,13 +18,22 @@ function toggleModal(){
     }
 }
 
-modalOpenBtn.addEventListener('click', toggleModal)
-modalCloseBtn.addEventListener('click', toggleModal)
+modalOpenBtn.addEventListener('click', toggleModal);
+modalCloseBtn.addEventListener('click', toggleModal);
+
 modalWrapper.addEventListener('click', (e) => {
     if(e.target === modalWrapper){
         toggleModal();
     }
-})
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape'){
+        toggleModal()
+    }
+});
+
+
 
 
 //

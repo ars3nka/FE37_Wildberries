@@ -2,9 +2,6 @@ a{
     text-decoration: none;
 }
 
-// body{
-//     overflow: hidden;
-// }
 .modal__wrapper{
     position: fixed;
     left: 0;
@@ -12,21 +9,19 @@ a{
     bottom: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal__content{
-    font-family: 'Roboto', sans-serif;
-    max-width: 420px;
-    background: #fff;
-    // margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    box-sizing: border-box;
-    padding: 30px;
-    border: 1px solid rgba($color: #6e7376, $alpha: 0.5);
-    border-radius: 10px;
-    position: relative;
-    transform: translate(-50%, -50%);
+    .modal__content{
+        font-family: 'Roboto', sans-serif;
+        max-width: 420px;
+        background: #fff;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        padding: 30px;
+        border: 1px solid rgba($color: #6e7376, $alpha: 0.5);
+        border-radius: 10px;
+        position: relative;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .modal__close{
@@ -62,6 +57,10 @@ a{
     line-height: 16px;
     color: #6e7376;
     cursor: pointer;
+}
+
+.modal__input:focus{
+    border: 1px solid rgb(189, 6, 186);
 }
 
 select{
@@ -143,11 +142,12 @@ select{
     font-size: 12px;
     align-items: center;
     color:rgb(189, 6, 186);
-    margin-right: 10px;
+    margin-right: 8px;
     margin-left: 4px;
 }
+
 .specification__without_icons{
-margin-left: 30px;
+    margin-left: 28px;
 }
 
 .specification__without_icons::before{
@@ -157,4 +157,81 @@ margin-left: 30px;
 
 .modal__hide{
     display: none;
+}
+
+@media (max-width: 1024px) {
+.modal__wrapper{
+    .modal__content{
+        max-width: 370px;
+    }
+    }
+    .modal__title{
+        font-size: 23px;
+        line-height: 20px;
+    }
+    .other__pc{
+        margin: 15px 0 20px 0;
+    }
+    .other__pc > label{
+        padding-left: 23px;
+        font-size: 14px;
+    }
+    .other__pc_checkbox{
+        top: 74.5%;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+    }
+    .other__pc_checkbox::after{
+        font-size: 8px;
+    }
+    select{
+        padding-right: 5px;
+    }
+    .specification::before{
+        font-size: 10px;
+        margin-right: 8px;
+        margin-left: 2px;
+    }
+    .specification__without_icons{
+        margin-left: 24px;
+    }
+    .modal__input, select{
+        padding: 10px 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal__wrapper{
+        .modal__content{
+            max-width: 320px;
+            padding: 20px;
+        }
+    }
+    .modal__title{
+        font-size: 19px;
+        padding: 30px 0 20px 0;
+    }
+    select{
+        padding-right: 0;
+    }
+    .modal__input, select{
+        margin-bottom: 15px;
+    }
+    .other__pc_checkbox{
+        left: 20px;
+        top: 75%;
+    }
+    .other__pc{
+        margin: 10px 0 20px 0;
+    }
+    .other__pc > label{
+        padding-left: 22px;
+    }
+    .specification{
+        font-size: 12px;
+    }
+    .specification__without_icons{
+        margin-left: 24px;
+    }
 }
