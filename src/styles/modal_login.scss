@@ -96,6 +96,7 @@ select{
 
 .other__pc{
     margin: 20px 0;
+    position: relative;
 }
 
 .other__pc > label{
@@ -106,8 +107,8 @@ select{
 
 .other__pc_checkbox{
     position: absolute;
-    top: 74.5%;
-    left: 30px;
+    top: 0;
+    left: 0;
     appearance: none;
     -webkit-appearance: none;
     width: 18px;
@@ -187,7 +188,7 @@ select{
         font-size: 14px;
     }
     .other__pc_checkbox{
-        top: 74.5%;
+        top: 3px;
         width: 15px;
         height: 15px;
         border-radius: 3px;
@@ -227,10 +228,6 @@ select{
     }
     .modal__input, select{
         margin-bottom: 15px;
-    }
-    .other__pc_checkbox{
-        left: 20px;
-        top: 75%;
     }
     .other__pc{
         margin: 10px 0 20px 0;

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles/styles.scss">
   <script type="module" src="js/index.js"></script>
+  <script type="module" src="./js/modal_login/modal_login.js"></script>
   <link rel="icon" href="./images/favicon_wb.ico" type="image/vnd.microsoft.icon">
   <title>Wildberries</title>
 </head>
@@ -40,10 +41,10 @@
                 <div class="contact_login">
                   <div class="user_phone__number">
                     <select id="country__code">
-                      <option value="Belarus">+375</option>
-                      <option value="Russia">+7</option>
-                      <option value="Armenia">+374</option>
-                      <option value="Georgia">+995</option>
+                      <option country="Belarus">+375</option>
+                      <option country="Russia">+7</option>
+                      <option country="Armenia">+374</option>
+                      <option country="Georgia">+995</option>
                     </select>
 
                     <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder="(__) ___-__-__">
@@ -84,6 +85,6 @@
   </main>
 
   <script src="./js/modal_login/plugins/inputmask.js"></script>
-  <script src="./js/modal_login/modal_login.js"></script>
+
 </body>
 </html>

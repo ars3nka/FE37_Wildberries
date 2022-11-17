@@ -3,11 +3,14 @@
 const modalWrapper = document.querySelector('.modal__wrapper');
 const modalOpenBtn = document.querySelector('.header__profile')
 const modalCloseBtn = document.querySelector('.modal__close');
-const inputUserPhone = document.querySelector('input[type = "phone"]');
+const inputUserPhone = document.querySelector('input[type=phone]');
+const inputCountryCode = document.querySelector('#country__code')
 const inputButton = document.querySelector('.get__code');
 const inputValidatorDiv= document.querySelector('.modal__input_validator');
-const modalCheckbox = document.querySelectorAll('.other__pc_checkbox');
+const modalCheckbox = document.querySelector('input[type=checkbox]');
+
 let inputPhoneMask = new Inputmask('(99) 999-99-99');
+let array = [];
 
 inputPhoneMask.mask(inputUserPhone)
 
@@ -42,21 +45,22 @@ function validatePhone(phone){
     return regex.test(phone);
 };
 
-// Работа с инпутом 
+// Работа с input и checkbox
 
 inputButton.addEventListener('click', (e) => {
     e.preventDefault()
     let array = [];
-    array.push(inputUserPhone.value)
+    array.push(`${inputCountryCode.value} ${inputUserPhone.value}`)
     if (validatePhone(inputUserPhone.value)){
         inputValidatorDiv.classList.add('modal__input_validator');
-        localStorage.setItem('phone', array)
+        if(modalCheckbox.checked){
+            sessionStorage.setItem('phone', array)
+        } else {
+            localStorage.setItem('phone', array)
+        }
         inputUserPhone.value = '';
     } else {
         inputValidatorDiv.classList.remove('modal__input_validator');
-        localStorage.setItem('notPhone', null)
     }
 });
-
-// Работа с checkbox
 
