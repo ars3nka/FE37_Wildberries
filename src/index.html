@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles/styles.scss">
   <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/components/swiper.js"></script>
   <link rel="icon" href="./images/favicon_wb.ico" type="image/vnd.microsoft.icon">
   <title>Wildberries</title>
 </head>
@@ -78,9 +79,34 @@
   <!-- modal login window end -->
 
   <main class="main">
+
+    <div class="swiper">
+
+      <div class="swiper__line">
+        <img src="images/swiper/swiper_1.jpg" alt="Swiper Slide">
+        <img src="images/swiper/swiper_2.jpg" alt="Swiper Slide">
+        <img src="images/swiper/swiper_3.jpg" alt="Swiper Slide">
+        <img src="images/swiper/swiper_4.jpg" alt="Swiper Slide">
+      </div>
+
+      <div class="swiper__buttons">
+        <button class="swiper__button_prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="swiper__button_next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <div class="swiper__pagination">
+        <div class="swiper__pagination_item active"></div>
+        <div class="swiper__pagination_item"></div>
+        <div class="swiper__pagination_item"></div>
+        <div class="swiper__pagination_item"></div>
+      </div>
+
+    </div>
+
   </main>
 
   <script src="./js/modal_login/plugins/inputmask.js"></script>
   <script src="./js/modal_login/modal_login.js"></script>
+  <script src="https://kit.fontawesome.com/3a445c3d46.js" crossorigin="anonymous"></script>
 </body>
 </html>
