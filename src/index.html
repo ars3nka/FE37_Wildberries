@@ -40,17 +40,20 @@
                 <div class="contact_login">
                   <div class="user_phone__number">
                     <select id="country__code">
-                      <option value="Belarus">+375</option>
-                      <option value="Russia">+7</option>
-                      <option value="Armenia">+374</option>
-                      <option value="Georgia">+995</option>
+                      <option country="Belarus">+375</option>
+                      <option country="Russia">+7</option>
+                      <option country="Armenia">+374</option>
+                      <option country="Georgia">+995</option>
                     </select>
 
-                    <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder=" (__) ___-__-__">
+                    <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder="(__) ___-__-__">
                   </div>
                   <div class="get__code">
                     <button class="get__code">Получить код</button>
                   </div>
+                </div>
+                <div class="get__code_validation modal__input_validator">
+                  <p>Введите номер телефона!</p>
                 </div>
             </form>
             <div class="other__pc">
@@ -80,7 +83,5 @@
   <main class="main">
   </main>
 
-  <script src="./js/modal_login/plugins/inputmask.js"></script>
-  <script src="./js/modal_login/modal_login.js"></script>
 </body>
 </html>
