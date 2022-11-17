@@ -1,3 +1,5 @@
+import Inputmask from 'inputmask';
+
 // Модалка авторизации 
 
 const modalWrapper = document.querySelector('.modal__wrapper');
@@ -49,15 +51,15 @@ function validatePhone(phone){
 
 inputButton.addEventListener('click', (e) => {
     e.preventDefault()
-    let array = [];
-    array.push(`${inputCountryCode.value} ${inputUserPhone.value}`)
     if (validatePhone(inputUserPhone.value)){
         inputValidatorDiv.classList.add('modal__input_validator');
+        array = (`${inputCountryCode.value} ${inputUserPhone.value}`)
         if(modalCheckbox.checked){
             sessionStorage.setItem('phone', array)
         } else {
             localStorage.setItem('phone', array)
         }
+        
         inputUserPhone.value = '';
     } else {
         inputValidatorDiv.classList.remove('modal__input_validator');
