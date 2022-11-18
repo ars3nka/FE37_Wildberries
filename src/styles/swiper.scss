@@ -1,5 +1,4 @@
 .swiper {
-  // border: 2px solid black;
   max-width: 80%;
   margin: 20px auto;
   overflow: hidden;
@@ -23,6 +22,9 @@
     justify-content: space-between;
     padding: 0px 25px;
     position: relative;
+    pointer-events: none;
+    transition-timing-function: ease;
+    transition-duration: .3s;
   }
   .swiper__button_prev, .swiper__button_next {
     cursor: pointer;
@@ -33,6 +35,7 @@
     background: rgb(255, 255, 255);
     opacity: .5;
     transition: all .25s ease;
+    pointer-events: auto;
   }
   .swiper__button_prev:hover, .swiper__button_next:hover {
     opacity: 1;
