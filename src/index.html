@@ -27,13 +27,12 @@
     </button>
   </header>
   <!-- modal login window start -->
-
   <div class="modal">
     <div class="modal__wrapper modal__hide">
         <div class="modal__content">
             <form action="#">
                 <div class="modal__close">&times;</div>
-                <div class="modal__title">Войти или создать профиль</div>
+                <h2 class="modal__title">Войти или создать профиль</h2>
                 <div class="user__phone">
                   <label class="user__phone" for="user__phone">Контактный телефон</label>
                 </div>
@@ -45,7 +44,6 @@
                       <option country="Armenia">+374</option>
                       <option country="Georgia">+995</option>
                     </select>
-
                     <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder="(__) ___-__-__">
                   </div>
                   <div class="get__code">
@@ -77,17 +75,37 @@
         </div>
     </div>
 </div>
-
   <!-- modal login window end -->
 
   <!-- modal bucket start -->
-  
-<div class="modal_bucket">
-  <div class="modal__wrapper modal__hide">
-
+<div class="modal_basket">
+  <div class="modal__wrapper modal__hide" id="modal_basket"> <!--modal__hide-->
+    <div class="modal__content">
+      <div class="modal__close modal__basket_close">&times;</div>
+      <div class="modal__basket_header">
+        <h2 class="modal__title modal__basket_title">Корзина</h2>
+        <button class="modal__basket_clean">Очистить корзину</button>
+      </div>
+      <div class="wrapper__basket_cards">
+      <div class="basket_card">
+        <div class="basket_card__close">&times;</div>
+        <img class="basket_card__img" src="https://basket-08.wb.ru/vol1132/part113244/113244899/images/big/1.jpg" alt="#">
+        <p class="basket_card__title">Смартфон Apple iPhone 13 Pro Max 256GB</p>
+        <div class="basket_card__price">3539.00</div>
+      </div>
+      </div>
+      <div class="modal_basket_total_wrapper">
+        <div class="order_sum">
+        <div class="modal_basket_total">Итого:</div>
+        <div class="modal_basket_order_total">3539.00</div>
+        </div>
+        <div class="modal_basket_order_wrapper">
+        <button class="modal_basket_order">Заказать</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
   <!-- modal bucket end -->
   
   <main class="main">
