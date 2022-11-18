@@ -1,1 +1,2 @@
-import './modal_login/modal_login.js'
+import './modal/modal_login';
+import './modal/modal_bucket';
