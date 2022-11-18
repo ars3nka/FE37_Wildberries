@@ -26,6 +26,24 @@ h2 {
       position: relative;
       overflow: hidden;
       border-radius: 5%;
+
+      .preview__btn {
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+        font-size: 12px;
+        line-height: 16px;
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        padding: 10px 11px;
+        border: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        transition: 0.5s;
+      }
       .card_discount {
         position: absolute;
         left: 5px;
@@ -36,8 +54,8 @@ h2 {
         color: #cb11ab;
       }
       img {
+        position: relative;
         max-height: 250px;
-        // border-radius: 15%;
       }
     }
     .goods_card_info {
@@ -72,5 +90,22 @@ h2 {
         }
       }
     }
+    .btn_basket {
+      width: 100%;
+      margin-top: 5px;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      padding: 3px;
+      background-color: #cb11ab;
+      border: 2px solid #cb11ab;
+    }
+  }
+  .card:hover .preview__btn {
+    opacity: 1;
+    transition: 0.5s;
   }
 }
