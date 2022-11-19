@@ -1,0 +1,138 @@
+.modal__basket_header{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px;
+}
+
+.modal__basket_title{
+    padding: 20px 0;
+}
+
+.modal__basket_close{
+    top: 3%;
+}
+
+.wrapper__basket_cards{
+    max-height: 250px;
+    overflow: auto;
+}
+
+.modal__basket_clean{
+    align-self: center;
+    padding: 8px;
+    width: 100%;
+    height: 50%;
+    background-color: #cb11ab;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.modal__basket_clean:hover{
+    background-color: #d238b8;
+}
+
+.basket_card{
+    border-bottom: 1px solid rgba($color: #6e7376, $alpha: 0.5);
+    padding: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30%;
+    position: relative;
+}
+
+.basket_card__img{
+    margin-top: 5px;
+    width: 70px;
+    height: 90px;
+}
+
+.basket_card__close{
+    position: absolute;
+    right: 7px;
+    top: 0;
+    color: #6e7376;
+    cursor: pointer;
+}
+
+.basket_card__title{
+    position: absolute;
+    max-width: 240px;
+    left: 90px;
+    top: 20px;
+    color: #6e7376;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.basket_card__title:hover{
+    color: #cb11ab;
+}
+
+.basket_card__price{
+    position: absolute;
+    right: 7px;
+    bottom: 5px;
+    color: #6e7376;
+}
+
+.modal_basket_total_wrapper{
+    height: 35px;
+    margin-top: 45px;
+}
+
+.order_sum{
+    position: relative;
+    font-size: 18px;
+}
+
+.modal_basket_total{
+    position: absolute;
+    bottom: 25px;
+    left: 5px;
+}
+
+.modal_basket_order_total{
+    position: absolute;
+    right: 7px;
+    bottom: 25px;
+}
+
+.modal_basket_order_wrapper{
+    margin-top: 35px;
+}
+
+.modal_basket_order{
+    width: 86%;
+    height: 50px;
+    font-size: 14px;
+    background-color: #cb11ab;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    transition: .3s;
+}
+
+.modal_basket_order:hover{
+    background-color: #d238b8;
+}
+
+@media (max-width: 768px) {
+    .modal__basket_clean{
+        font-size: 12px;
+    }
+    .basket_card__title{
+        font-size: 14px;
+    }
+    .basket_card__price{
+        font-size: 14px;
+    }
+    .order_sum{
+        font-size: 16px;
+    }
+}

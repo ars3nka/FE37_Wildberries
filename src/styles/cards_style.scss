@@ -1,0 +1,111 @@
+.section_cards {
+  margin: 0 20px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 5px;
+}
+.container_cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 100%;
+  gap: 17px;
+  padding: 5px;
+
+  .card {
+    margin: 0 auto;
+    padding: 5;
+    max-width: 195px;
+
+    .card_container__image {
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      border-radius: 5%;
+
+      .preview__btn {
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+        font-size: 12px;
+        line-height: 16px;
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        padding: 10px 11px;
+        border: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        transition: 0.5s;
+      }
+      .card_discount {
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        padding: 0 3px;
+        background-color: #fdeef9;
+        border-radius: 20px;
+        color: #cb11ab;
+      }
+      img {
+        position: relative;
+        max-height: 250px;
+      }
+    }
+    .goods_card_info {
+      margin-top: 10px;
+      .price_now {
+        font-size: 18px;
+        line-height: 24px;
+        margin-right: 10px;
+        font-weight: 700;
+        color: #242424;
+      }
+      .price_last {
+        font-size: 14px;
+        line-height: 20px;
+        color: #999;
+        text-decoration: line-through;
+      }
+      .goods_card__description {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        outline: 0;
+        white-space: nowrap;
+        font-size: 14px;
+        line-height: 20px;
+        color: #999;
+
+        .goods_card_brand::after {
+          content: " / ";
+        }
+        span {
+          white-space: nowrap;
+        }
+      }
+    }
+    .btn_basket {
+      width: 100%;
+      margin-top: 5px;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      padding: 3px;
+      background-color: #cb11ab;
+      border: 2px solid #cb11ab;
+    }
+  }
+  .card:hover .preview__btn {
+    opacity: 1;
+    transition: 0.5s;
+  }
+}

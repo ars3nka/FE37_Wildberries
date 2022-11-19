@@ -9,6 +9,7 @@ a{
     bottom: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
     .modal__content{
         font-family: 'Roboto', sans-serif;
         max-width: 420px;
@@ -60,7 +61,7 @@ a{
 }
 
 .modal__input:focus{
-    border: 1px solid rgb(189, 6, 186);
+    border: 1px solid #cb11ab;
 }
 
 select{
@@ -84,8 +85,19 @@ select{
     margin-bottom: 15px;
 }
 
+.modal__input_validator{
+    display: none;
+}
+
+.get__code_validation{
+    font-size: 14px;
+    line-height: 20px;
+    color: #cb11ab;
+}
+
 .other__pc{
     margin: 20px 0;
+    position: relative;
 }
 
 .other__pc > label{
@@ -96,15 +108,15 @@ select{
 
 .other__pc_checkbox{
     position: absolute;
-    top: 74.5%;
-    left: 30px;
+    top: 0;
+    left: 0;
     appearance: none;
     -webkit-appearance: none;
     width: 18px;
     height: 18px;
     border: 1px solid rgba($color: #6e7376, $alpha: 0.5);
     border-radius: 5px;
-    background-color: rgb(189, 6, 186);
+    background-color: #cb11ab;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -141,7 +153,7 @@ select{
     content: "\f00c";
     font-size: 12px;
     align-items: center;
-    color:rgb(189, 6, 186);
+    color: #cb11ab;
     margin-right: 8px;
     margin-left: 4px;
 }
@@ -177,7 +189,7 @@ select{
         font-size: 14px;
     }
     .other__pc_checkbox{
-        top: 74.5%;
+        top: 3px;
         width: 15px;
         height: 15px;
         border-radius: 3px;
@@ -217,10 +229,6 @@ select{
     }
     .modal__input, select{
         margin-bottom: 15px;
-    }
-    .other__pc_checkbox{
-        left: 20px;
-        top: 75%;
     }
     .other__pc{
         margin: 10px 0 20px 0;
