@@ -1,2 +1,2 @@
 import './modal/modal_login';
-import './modal/modal_bucket';
+import './modal/modal_basket';
