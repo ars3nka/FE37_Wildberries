@@ -36,7 +36,9 @@ modalWrapper.addEventListener('click', (e) => {
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Escape'){
-        toggleModal()
+        if(!modalWrapper.classList.contains('modal__hide')){
+            modalWrapper.classList.add('modal__hide');
+        }
     }
 });
 

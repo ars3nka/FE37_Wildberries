@@ -1,82 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles/styles.scss" />
-    <script type="module" src="js/index.js"></script>
-    <link
-      rel="icon"
-      href="./images/favicon_wb.ico"
-      type="image/vnd.microsoft.icon"
-    />
-    <title>Wildberries</title>
-  </head>
-  <body>
-    <header class="header">
-      <a href="" class="header__link"
-        ><img
-          src="images/logo_wb.svg"
-          alt="Wildberries Logo"
-          class="header__link-image"
-      /></a>
-      <input type="search" class="header__search" placeholder="Я ищу..." />
-      <button class="header__profile">
-        <img src="images/profile_wb.svg" alt="profile image" />
-        <span>Войти</span>
-      </button>
-      <button class="header__basket">
-        <img src="images/basket_wb.svg" alt="basket image" />
-        <span>Корзина</span>
-      </button>
-    </header>
-    <!-- modal login window start -->
-
-    <div class="modal">
-      <div class="modal__wrapper modal__hide">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/styles.scss">
+  <script type="module" src="js/index.js"></script>
+  <link rel="icon" href="./images/favicon_wb.ico" type="image/vnd.microsoft.icon">
+  <title>Wildberries</title>
+</head>
+<body>
+  <header class="header">
+    <a href="" class="header__link"><img src="images/logo_wb.svg" alt="Wildberries Logo" class="header__link-image"></a>
+    <input type="search" class="header__search" placeholder="Я ищу...">
+    <button class="header__profile">
+      <img src="images/profile_wb.svg" alt="profile image">
+      <span>Войти</span>
+    </button>
+    <button class="header__basket">
+      <img src="images/basket_wb.svg" alt="basket image">
+      <span>Корзина</span>
+    </button>
+  </header>
+  <!-- modal login window start -->
+  <div class="modal">
+    <div class="modal__wrapper modal__hide">
         <div class="modal__content">
-          <form action="#">
-            <div class="modal__close">&times;</div>
-            <div class="modal__title">Войти или создать профиль</div>
-            <div class="user__phone">
-              <label class="user__phone" for="user__phone"
-                >Контактный телефон</label
-              >
-            </div>
-            <div class="contact_login">
-              <div class="user_phone__number">
-                <select id="country__code">
-                  <option country="Belarus">+375</option>
-                  <option country="Russia">+7</option>
-                  <option country="Armenia">+374</option>
-                  <option country="Georgia">+995</option>
-                </select>
-
-                <input
-                  name="phone"
-                  type="phone"
-                  class="modal__input"
-                  id="user__phone"
-                  placeholder="(__) ___-__-__"
-                />
-              </div>
-              <div class="get__code">
-                <button class="get__code">Получить код</button>
-              </div>
+            <form action="#">
+                <div class="modal__close">&times;</div>
+                <h2 class="modal__title">Войти или создать профиль</h2>
+                <div class="user__phone">
+                  <label class="user__phone" for="user__phone">Контактный телефон</label>
+                </div>
+                <div class="contact_login">
+                  <div class="user_phone__number">
+                    <select id="country__code">
+                      <option country="Belarus">+375</option>
+                      <option country="Russia">+7</option>
+                      <option country="Armenia">+374</option>
+                      <option country="Georgia">+995</option>
+                    </select>
+                    <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder="(__) ___-__-__">
+                  </div>
+                  <div class="get__code">
+                    <button class="get__code">Получить код</button>
+                  </div>
+                </div>
+                <div class="get__code_validation modal__input_validator">
+                  <p>Введите номер телефона!</p>
+                </div>
+            </form>
+            <div class="other__pc">
+              <input class="other__pc_checkbox" type="checkbox" id="other__pc" name="other__pc" checked>
+              <label for="other__pc">Чужой компьютер</label>
             </div>
             <div class="get__code_validation modal__input_validator">
               <p>Введите номер телефона!</p>
@@ -115,10 +95,42 @@
         </div>
       </div>
     </div>
-
     <!-- modal login window end -->
 
-    <main class="main"></main>
+<!-- modal bucket start -->
+<div class="modal_basket">
+  <div class="modal__wrapper modal__hide" id="modal_basket"> <!--modal__hide-->
+    <div class="modal__content">
+      <div class="modal__close modal__basket_close">&times;</div>
+      <div class="modal__basket_header">
+        <h2 class="modal__title modal__basket_title">Корзина</h2>
+        <button class="modal__basket_clean">Очистить корзину</button>
+      </div>
+      <div class="wrapper__basket_cards">
+      <div class="basket_card">
+        <div class="basket_card__close">&times;</div>
+        <img class="basket_card__img" src="https://basket-08.wb.ru/vol1132/part113244/113244899/images/big/1.jpg" alt="#">
+        <p class="basket_card__title">Смартфон Apple iPhone 13 Pro Max 256GB</p>
+        <div class="basket_card__price">3539.00</div>
+      </div>
+      </div>
+      <div class="modal_basket_total_wrapper">
+        <div class="order_sum">
+        <div class="modal_basket_total">Итого:</div>
+        <div class="modal_basket_order_total">3539.00</div>
+        </div>
+        <div class="modal_basket_order_wrapper">
+        <button class="modal_basket_order">Заказать</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- modal bucket end -->
+  
+  <main class="main">
+  </main>
+
     <!-- Section with Cards  -->
     <section class="section_cards">
       <h2>Хиты продажaa</h2>
