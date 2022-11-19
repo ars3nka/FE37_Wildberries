@@ -8,7 +8,7 @@ const modalCloseBtn = document.querySelector('.modal__close');
 const inputUserPhone = document.querySelector('input[type=phone]');
 const inputCountryCode = document.querySelector('#country__code')
 const inputButton = document.querySelector('.get__code');
-const inputValidatorDiv= document.querySelector('.modal__input_validator');
+const inputValidatorDiv = document.querySelector('.modal__input_validator');
 const modalCheckbox = document.querySelector('input[type=checkbox]');
 
 let inputPhoneMask = new Inputmask('(99) 999-99-99');
