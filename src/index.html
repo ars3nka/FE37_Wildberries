@@ -1,120 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles/styles.scss" />
-    <script type="module" src="js/index.js"></script>
-    <link
-      rel="icon"
-      href="./images/favicon_wb.ico"
-      type="image/vnd.microsoft.icon"
-    />
-    <title>Wildberries</title>
-  </head>
-  <body>
-    <header class="header">
-      <a href="" class="header__link"
-        ><img
-          src="images/logo_wb.svg"
-          alt="Wildberries Logo"
-          class="header__link-image"
-      /></a>
-      <input type="search" class="header__search" placeholder="Я ищу..." />
-      <button class="header__profile">
-        <img src="images/profile_wb.svg" alt="profile image" />
-        <span>Войти</span>
-      </button>
-      <button class="header__basket">
-        <img src="images/basket_wb.svg" alt="basket image" />
-        <span>Корзина</span>
-      </button>
-    </header>
-    <!-- modal login window start -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/styles.scss">
+  <script type="module" src="js/index.js"></script>
+  <link rel="icon" href="./images/favicon_wb.ico" type="image/vnd.microsoft.icon">
+  <title>Wildberries - модный интернет магазин</title>
+</head>
+<body>
+  <header class="header">
+    <a href="" class="header__link"><img src="images/logo_wb.svg" alt="Wildberries Logo" class="header__link-image"></a>
+    <input type="search" class="header__search" placeholder="Я ищу...">
+    <button class="header__profile">
+      <img src="images/profile_wb.svg" alt="profile image">
+      <span>Войти</span>
+    </button>
+    <button class="header__basket">
+      <img src="images/basket_wb.svg" alt="basket image">
+      <span>Корзина</span>
+    </button>
+  </header>
+  <!-- modal login window start -->
 
-    <div class="modal">
-      <div class="modal__wrapper modal__hide">
+  <div class="modal">
+    <div class="modal__wrapper modal__hide">
         <div class="modal__content">
-          <form action="#">
-            <div class="modal__close">&times;</div>
-            <div class="modal__title">Войти или создать профиль</div>
-            <div class="user__phone">
-              <label class="user__phone" for="user__phone"
-                >Контактный телефон</label
-              >
+            <form action="#">
+                <div class="modal__close">&times;</div>
+                <div class="modal__title">Войти или создать профиль</div>
+                <div class="user__phone">
+                  <label class="user__phone" for="user__phone">Контактный телефон</label>
+                </div>
+                <div class="contact_login">
+                  <div class="user_phone__number">
+                    <select id="country__code">
+                      <option class="Belarus">+375</option>
+                      <option class="Russia">+7</option>
+                      <option class="Armenia">+374</option>
+                      <option class="Georgia">+995</option>
+                    </select>
+                    <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder="(__) ___-__-__">
+                  </div>
+                  <div class="get__code">
+                    <button class="get__code">Получить код</button>
+                  </div>
+                </div>
+                <div class="get__code_validation modal__input_validator">
+                  <p>Введите номер телефона!</p>
+                </div>
+            </form>
+            <div class="other__pc">
+              <input class="other__pc_checkbox" type="checkbox" id="other__pc" name="other__pc" checked>
+              <label for="other__pc">Чужой компьютер</label>
             </div>
-            <div class="contact_login">
-              <div class="user_phone__number">
-                <select id="country__code">
-                  <option country="Belarus">+375</option>
-                  <option country="Russia">+7</option>
-                  <option country="Armenia">+374</option>
-                  <option country="Georgia">+995</option>
-                </select>
-
-                <input
-                  name="phone"
-                  type="phone"
-                  class="modal__input"
-                  id="user__phone"
-                  placeholder="(__) ___-__-__"
-                />
-              </div>
-              <div class="get__code">
-                <button class="get__code">Получить код</button>
-              </div>
-            </div>
-            <div class="get__code_validation modal__input_validator">
-              <p>Введите номер телефона!</p>
-            </div>
-          </form>
-          <div class="other__pc">
-            <input
-              class="other__pc_checkbox"
-              type="checkbox"
-              id="other__pc"
-              name="other__pc"
-              checked
-            />
-            <label for="other__pc">Чужой компьютер</label>
-          </div>
-          <div>
-            <div class="specification">
-              Согласен с условиями
-              <a
-                target="_blank"
-                href="https://www.wildberries.by/services/pravila-polzovaniya-torgovoy-ploshchadkoy"
-              >
-                <span>Публичной оферты</span>
-              </a>
-              и
-              <div class="specification specification__without_icons">
-                <a
-                  target="_blank"
-                  href="https://www.wildberries.by/services/vozvrat-tovara"
-                >
+            <div>
+              <div class="specification">
+                Согласен с условиями 
+                <a target="_blank" href="https://www.wildberries.by/services/pravila-polzovaniya-torgovoy-ploshchadkoy">
+                  <span>Публичной оферты</span>
+                </a>
+                и 
+                <div class="specification specification__without_icons">
+                <a target="_blank" href="https://www.wildberries.by/services/vozvrat-tovara">
                   <span>правилами возврата</span>
                 </a>
               </div>
+              </div>
             </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- modal login window end -->
+
+  <!-- modal bucket start -->
+  <div class="modal_basket">
+    <div class="modal__wrapper modal__hide" id="modal_basket"> <!--modal__hide-->
+      <div class="modal__content">
+        <div class="modal__close modal__basket_close">&times;</div>
+        <div class="modal__basket_header">
+          <h2 class="modal__title modal__basket_title">Корзина</h2>
+          <button class="modal__basket_clean">Очистить корзину</button>
+        </div>
+        <div class="wrapper__basket_cards">
+        <div class="basket_card">
+          <div class="basket_card__close">&times;</div>
+          <img class="basket_card__img" src="https://basket-08.wb.ru/vol1132/part113244/113244899/images/big/1.jpg" alt="#">
+          <p class="basket_card__title">Смартфон Apple iPhone 13 Pro Max 256GB</p>
+          <div class="basket_card__price">3539.00</div>
+        </div>
+        </div>
+        <div class="modal_basket_total_wrapper">
+          <div class="order_sum">
+          <div class="modal_basket_total">Итого:</div>
+          <div class="modal_basket_order_total">3539.00</div>
+          </div>
+          <div class="modal_basket_order_wrapper">
+          <button class="modal_basket_order">Заказать</button>
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
 
     <!-- modal login window end -->
 
@@ -135,3 +127,162 @@
     </section>
   </body>
 </html>
+=======
+  </div>
+  <!-- modal bucket end -->
+
+  <main class="main">
+
+    <div class="swiper">
+
+      <div class="swiper__line">
+        <img src="images/swiper/swiper_1.jpg" alt="Swiper Slide">
+        <img src="images/swiper/swiper_2.jpg" alt="Swiper Slide">
+        <img src="images/swiper/swiper_3.jpg" alt="Swiper Slide">
+        <img src="images/swiper/swiper_4.jpg" alt="Swiper Slide">
+      </div>
+
+      <div class="swiper__buttons">
+        <button class="swiper__button_prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="swiper__button_next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <div class="swiper__pagination">
+        <div class="swiper__pagination_item active"></div>
+        <div class="swiper__pagination_item"></div>
+        <div class="swiper__pagination_item"></div>
+        <div class="swiper__pagination_item"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Section with Cards  -->
+  <section class="section_cards">
+    <h2>Хиты продаж</h2>
+    <ul class="container_cards">
+      <li class="card">
+        <div class="card_container__image">
+          <button class="preview__btn">Быстрый просмотр</button>
+          <p class="card_discount">5%</p>
+          <img src="./images/goods_images/first img.png" alt="нет картинки" />
+        </div>
+        <div class="goods_card_info">
+          <p>
+            <ins class="price_now">950 ₽</ins>
+            <del class="price_last">1000 ₽</del>
+          </p>
+          <p class="goods_card__description">
+            <span class="goods_card_brand">AMI</span
+            ><span>Стулья для кухни балкона комнаты дома дачи комплект</span>
+          </p>
+        </div>
+        <button class="btn_basket">Добавить в корзину</button>
+      </li>
+      <li class="card">
+        <div class="card_container__image">
+          <p class="card_discount">5%</p>
+          <img
+            src="./images/goods_images/second img.png"
+            alt="нет картинки"
+          />
+        </div>
+        <div class="goods_card_info">
+          <p><ins class="price_now"></ins> <del class="price_last"></del></p>
+          <p class="goods_card__description">
+            <span class="goods_card_brand">AMI</span
+            ><span
+              >Стулья для кухни балкона комнаты дома дачи комплект 2</span
+            >
+          </p>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card_container__image">
+          <p class="card_discount">5%</p>
+          <img src="./images/goods_images/third img.png" alt="нет картинки" />
+        </div>
+        <div class="goods_card_info">
+          <p><ins class="price_now"></ins> <del class="price_last"></del></p>
+          <p class="goods_card__description">
+            <span class="goods_card_brand">AMI</span
+            ><span
+              >Стулья для кухни балкона комнаты дома дачи комплект 2</span
+            >
+          </p>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card_container__image">
+          <p class="card_discount">5%</p>
+          <img
+            src="./images/goods_images/fourth img.png"
+            alt="нет картинки"
+          />
+        </div>
+        <div class="goods_card_info">
+          <p><ins class="price_now"></ins> <del class="price_last"></del></p>
+          <p class="goods_card__description">
+            <span class="goods_card_brand">AMI</span
+            ><span
+              >Стулья для кухни балкона комнаты дома дачи комплект 2</span
+            >
+          </p>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card_container__image">
+          <p class="card_discount">5%</p>
+          <img src="./images/goods_images/fifth img.png" alt="нет картинки" />
+        </div>
+        <div class="goods_card_info">
+          <p><ins class="price_now"></ins> <del class="price_last"></del></p>
+          <p class="goods_card__description">
+            <span class="goods_card_brand">AMI</span
+            ><span
+              >Стулья для кухни балкона комнаты дома дачи комплект 2</span
+            >
+          </p>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card_container__image">
+          <p class="card_discount">5%</p>
+          <img src="./images/goods_images/sixth img.png" alt="нет картинки" />
+        </div>
+        <div class="goods_card_info">
+          <p><ins class="price_now"></ins> <del class="price_last"></del></p>
+          <p class="goods_card__description">
+            <span class="goods_card_brand">AMI</span
+            ><span
+              >Стулья для кухни балкона комнаты дома дачи комплект 2</span
+            >
+          </p>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card_container__image">
+          <p class="card_discount">5%</p>
+          <img
+            src="./images/goods_images/seventh img.png"
+            alt="нет картинки"
+          />
+        </div>
+        <div class="goods_card_info">
+          <p><ins class="price_now"></ins> <del class="price_last"></del></p>
+          <p class="goods_card__description">
+            <span class="goods_card_brand">AMI</span
+            ><span
+              >Стулья для кухни балкона комнаты дома дачи комплект 2</span
+            >
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <script src="https://kit.fontawesome.com/3a445c3d46.js" crossorigin="anonymous"></script>
+</body>
+</html>
+>>>>>>> 91f06cf2949189ac04b4720232c98c433ae5a14c
