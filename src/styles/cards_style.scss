@@ -12,7 +12,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 1400px;
   gap: 17px;
   padding: 5px;
 
@@ -52,13 +52,14 @@ h2 {
         background-color: #fdeef9;
         border-radius: 20px;
         color: #cb11ab;
+        z-index: 1;
       }
       img {
         position: relative;
-        max-height: 250px;
+        height: 250px;
       }
     }
-    .goods_card_info {
+    .goods_card_price {
       margin-top: 10px;
       .price_now {
         font-size: 18px;
@@ -83,7 +84,7 @@ h2 {
         color: #999;
 
         .goods_card_brand::after {
-          content: " / ";
+          content: ' / ';
         }
         span {
           white-space: nowrap;
