@@ -1,4 +1,5 @@
 import './components/swiper';
+import './components/search';
 import './Cards/Card.js';
 import './modal/modal_login';
 import './Cards/addedToBasket.js';
