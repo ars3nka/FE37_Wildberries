@@ -4,6 +4,7 @@ h2 {
   font-weight: 700;
   padding: 5px;
 }
+
 .container_cards {
   display: flex;
   flex-wrap: wrap;
@@ -11,6 +12,7 @@ h2 {
   max-width: 1400px;
   gap: 17px;
   padding: 5px 0;
+  margin-top: 10px;
 
   .card {
     margin: 0 auto;

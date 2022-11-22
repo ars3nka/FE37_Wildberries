@@ -37,7 +37,7 @@ class Card {
 
   render() {
     const element = createElement('li', { className: 'card' });
-    element.innerHTML = ` <li class="card">
+    element.innerHTML = `
       <div class="card_container__image">
         <button class="preview__btn">Быстрый просмотр</button>
         <p class="card_discount">${this.discount}%</p>
@@ -53,8 +53,7 @@ class Card {
           ><span>${this.description}</span>
         </p>
       </div>
-      <button class="btn_basket">Добавить в корзину</button>
-    </li>`;
+      <button class="btn_basket">Добавить в корзину</button>`;
     this.parent.append(element);
   }
 }
