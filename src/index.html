@@ -1,35 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles/styles.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="./images/favicon_wb.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="styles/styles.scss"/>
     <script type="module" src="js/index.js"></script>
-    <link
-      rel="icon"
-      href="./images/favicon_wb.ico"
-      type="image/vnd.microsoft.icon"
-    />
+    <script defer src="https://kit.fontawesome.com/3a445c3d46.js" crossorigin="anonymous"></script>
     <title>Wildberries - модный интернет магазин</title>
   </head>
   <body>
+
     <header class="header">
-      <a href="" class="header__link"
-        ><img
-          src="images/logo_wb.svg"
-          alt="Wildberries Logo"
-          class="header__link-image"
-      /></a>
+      <a href="" class="header__link">
+        <img src="images/logo_wb.svg" alt="Wildberries Logo" class="header__link-image"/>
+      </a>
       <input type="search" class="header__search" placeholder="Я ищу..." />
       <button class="header__profile">
         <img src="images/profile_wb.svg" alt="profile image" />
@@ -40,7 +29,6 @@
         <span>Корзина</span>
       </button>
     </header>
-    <!-- modal login window start -->
 
     <div class="modal">
       <div class="modal__wrapper modal__hide">
@@ -49,9 +37,9 @@
             <div class="modal__close">&times;</div>
             <div class="modal__title">Войти или создать профиль</div>
             <div class="user__phone">
-              <label class="user__phone" for="user__phone"
-                >Контактный телефон</label
-              >
+              <label class="user__phone" for="user__phone">
+                Контактный телефон
+              </label>
             </div>
             <div class="contact_login">
               <div class="user_phone__number">
@@ -61,13 +49,7 @@
                   <option class="Armenia">+374</option>
                   <option class="Georgia">+995</option>
                 </select>
-                <input
-                  name="phone"
-                  type="phone"
-                  class="modal__input"
-                  id="user__phone"
-                  placeholder="(__) ___-__-__"
-                />
+                <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder="(__) ___-__-__"/>
               </div>
               <div class="get__code">
                 <button class="get__code">Получить код</button>
@@ -78,30 +60,18 @@
             </div>
           </form>
           <div class="other__pc">
-            <input
-              class="other__pc_checkbox"
-              type="checkbox"
-              id="other__pc"
-              name="other__pc"
-              checked
-            />
+            <input class="other__pc_checkbox" type="checkbox" id="other__pc" name="other__pc" checked />
             <label for="other__pc">Чужой компьютер</label>
           </div>
           <div>
             <div class="specification">
               Согласен с условиями
-              <a
-                target="_blank"
-                href="https://www.wildberries.by/services/pravila-polzovaniya-torgovoy-ploshchadkoy"
-              >
+              <a target="_blank" href="https://www.wildberries.by/services/pravila-polzovaniya-torgovoy-ploshchadkoy">
                 <span>Публичной оферты</span>
               </a>
               и
               <div class="specification specification__without_icons">
-                <a
-                  target="_blank"
-                  href="https://www.wildberries.by/services/vozvrat-tovara"
-                >
+                <a target="_blank" href="https://www.wildberries.by/services/vozvrat-tovara" >
                   <span>правилами возврата</span>
                 </a>
               </div>
@@ -111,9 +81,6 @@
       </div>
     </div>
 
-    <!-- modal login window end -->
-
-    <!-- modal bucket start -->
     <div class="modal_basket">
       <div class="modal__wrapper modal__hide" id="modal_basket">
         <!--modal__hide-->
@@ -126,11 +93,7 @@
           <div class="wrapper__basket_cards">
             <div class="basket_card">
               <div class="basket_card__close">&times;</div>
-              <img
-                class="basket_card__img"
-                src="https://basket-08.wb.ru/vol1132/part113244/113244899/images/big/1.jpg"
-                alt="#"
-              />
+              <img class="basket_card__img" src="https://basket-08.wb.ru/vol1132/part113244/113244899/images/big/1.jpg" alt="#"/>
               <p class="basket_card__title">
                 Смартфон Apple iPhone 13 Pro Max 256GB
               </p>
@@ -149,9 +112,9 @@
         </div>
       </div>
     </div>
-    <!-- modal bucket end -->
 
     <main class="main">
+
       <div class="swiper">
         <div class="swiper__line">
           <img src="images/swiper/swiper_1.jpg" alt="Swiper Slide" />
@@ -176,17 +139,13 @@
           <div class="swiper__pagination_item"></div>
         </div>
       </div>
+
+      <section class="section_cards">
+        <h2>Хиты продаж</h2>
+        <ul class="container_cards"></ul>
+      </section>
+
     </main>
 
-    <!-- Section with Cards  -->
-
-    <script
-      src="https://kit.fontawesome.com/3a445c3d46.js"
-      crossorigin="anonymous"
-    ></script>
-    <section class="section_cards">
-      <h2>Хиты продаж</h2>
-      <ul class="container_cards"></ul>
-    </section>
   </body>
 </html>
