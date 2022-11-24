@@ -12,16 +12,15 @@ const inputValidatorDiv = document.querySelector('.modal__input_validator');
 const modalCheckbox = document.querySelector('input[type=checkbox]');
 
 let inputPhoneMask = new Inputmask('(99) 999-99-99');
-let array = [];
 
 inputPhoneMask.mask(inputUserPhone);
 
-function toggleModal() {
+export function toggleModal() {
   modalWrapper.classList.toggle('modal__hide');
   if (modalWrapper.classList.contains('modal__hide')) {
-    document.body.style.overflow = '';
-  } else {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = ''; 
+    } else { 
+      document.body.style.overflow = 'hidden'; 
   }
 }
 
@@ -54,15 +53,19 @@ function validatePhone(phone) {
 inputButton.addEventListener('click', (e) => {
   e.preventDefault();
   if (validatePhone(inputUserPhone.value)) {
-    inputValidatorDiv.classList.add('modal__input_validator');
-    array = `${inputCountryCode.value} ${inputUserPhone.value}`;
+    let userPhone = `${inputCountryCode.value} ${inputUserPhone.value}`;
+    let userData = [{ "Номер пользователя": userPhone}];
+    inputValidatorDiv.classList.add('modal__input_validator'); 
     if (modalCheckbox.checked) {
-      sessionStorage.setItem('phone', array);
+      sessionStorage.setItem('userBasket', JSON.stringify(userData));
+      localStorage.removeItem('userBasket');
     } else {
-      localStorage.setItem('phone', array);
+      localStorage.setItem('userBasket', JSON.stringify(userData));
+      sessionStorage.removeItem('userBasket');
     }
-
     inputUserPhone.value = '';
+    modalWrapper.classList.add('modal__hide');
+    document.body.style.overflow = ''; 
   } else {
     inputValidatorDiv.classList.remove('modal__input_validator');
   }
