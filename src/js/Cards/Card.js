@@ -37,24 +37,64 @@ class Card {
 
   render() {
     const element = createElement('li', { className: 'card' });
-    element.innerHTML = ` <li class="card">
-      <div class="card_container__image">
-        <button class="preview__btn">Быстрый просмотр</button>
-        <p class="card_discount">${this.discount}%</p>
-        <img src=${this.src} alt=${this.alt} />
-      </div>
-      <div class="goods_card_price">
-        <p>
-          <ins class="price_now">${this.priceNow} p.</ins>
-          <del class="price_last">${this.priceLast} p.</del>
-        </p>
-        <p class="goods_card__description">
-          <span class="goods_card_brand">${this.brand}</span
-          ><span>${this.description}</span>
-        </p>
-      </div>
-      <button class="btn_basket">Добавить в корзину</button>
-    </li>`;
+    // <button class='preview__btn'>Быстрый просмотр</button>
+    element.innerHTML = ` 
+    <div class='card_container__image'>
+    <p class='card_discount'>${this.discount}%</p>
+    <img src=${this.src} alt=${this.alt} />
+    </div>
+    <div class='goods_card_price'>
+    <p>
+    <ins class='price_now'>${this.priceNow} p.</ins>
+    <del class='price_last'>${this.priceLast} p.</del>
+    </p>
+    <p class='goods_card__description'>
+    <span class='goods_card_brand'>${this.brand}</span
+    ><span>${this.description}</span>
+    </p>
+    </div>
+    <button class='btn_basket'>Добавить в корзину</button>
+    `;
+
+    const popUpBg = createElement('div', { className: 'popup__bg' });
+    const popUp = createElement('div', { className: 'popup' });
+    const image = createElement('img', {
+      className: 'image',
+      src: `${this.src}`,
+    });
+    const cardButton = createElement('button', {
+      className: 'preview__btn',
+      textContent: 'Быстрый просмотр',
+    });
+    const popUpButton = createElement('button', {
+      className: 'popup_button',
+    });
+
+    cardButton.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '17px';
+
+      popUpBg.classList.add('active');
+      popUp.classList.add('active');
+    });
+
+    popUpButton.addEventListener('click', () => {
+      document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '';
+      popUpBg.classList.remove('active');
+      popUp.classList.remove('active');
+    });
+    document.addEventListener('click', (e) => {
+      if (e.target === popUpBg) {
+        document.body.style.overflow = 'auto';
+        document.body.style.paddingRight = '';
+        popUpBg.classList.remove('active');
+        popUp.classList.remove('active');
+      }
+    });
+    popUp.append(popUpButton, image);
+    popUpBg.append(popUp);
+    element.append(cardButton, popUpBg);
     this.parent.append(element);
   }
 }
