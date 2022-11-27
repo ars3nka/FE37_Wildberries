@@ -9,7 +9,8 @@ class Card {
     priceLast,
     brand,
     description,
-    parentSelector
+    parentSelector,
+    id
   ) {
     this.src = src;
     this.alt = alt;
@@ -18,7 +19,7 @@ class Card {
     this.brand = brand;
     this.description = description;
     this.parent = document.querySelector(parentSelector);
-
+    this.id = id;
     this.calcDiscount();
   }
 
@@ -146,7 +147,8 @@ getData(cardPath).then((products) => {
       card.priceLast,
       card.brand,
       card.description,
-      card.parentSelector
+      card.parentSelector,
+      card.id
     ).render();
   });
 });
