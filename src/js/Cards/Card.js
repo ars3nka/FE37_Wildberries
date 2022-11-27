@@ -37,7 +37,6 @@ class Card {
 
   render() {
     const element = createElement('li', { className: 'card' });
-    // <button class='preview__btn'>Быстрый просмотр</button>
     element.innerHTML = ` 
     <div class='card_container__image'>
     <p class='card_discount'>${this.discount}%</p>
@@ -45,8 +44,8 @@ class Card {
     </div>
     <div class='goods_card_price'>
     <p>
-    <ins class='price_now'>${this.priceNow} p.</ins>
-    <del class='price_last'>${this.priceLast} p.</del>
+    <ins class='price_now'>${this.priceNow} </ins>
+    <del class='price_last'>${this.priceLast} </del>
     </p>
     <p class='goods_card__description'>
     <span class='goods_card_brand'>${this.brand}</span
@@ -62,12 +61,42 @@ class Card {
       className: 'image',
       src: `${this.src}`,
     });
+    const additionalInfo = createElement('div', {
+      className: 'container_info',
+    });
+    const brandContainer = createElement('div', {
+      className: 'brand_container',
+    });
+    const brandName = createElement('span', {
+      className: 'brand_name',
+      textContent: `${this.brand}`,
+    });
+    const brandDescription = createElement('span', {
+      className: 'brand_description',
+      textContent: `${this.description}`,
+    });
+    const priceContainer = createElement('div', {
+      className: 'price_container',
+    });
+
+    const priceNow = createElement('ins', {
+      textContent: `${this.priceNow}`,
+      className: 'price_now',
+    });
+    const priceLast = createElement('del', {
+      textContent: `${this.priceLast}`,
+      className: 'price_last',
+    });
     const cardButton = createElement('button', {
       className: 'preview__btn',
       textContent: 'Быстрый просмотр',
     });
-    const popUpButton = createElement('button', {
+    const popUpButtonClose = createElement('button', {
       className: 'popup_button',
+    });
+    const popUpButtonBasket = createElement('button', {
+      className: 'btn_basket',
+      textContent: 'Добавить в корзину',
     });
 
     cardButton.addEventListener('click', () => {
@@ -78,7 +107,7 @@ class Card {
       popUp.classList.add('active');
     });
 
-    popUpButton.addEventListener('click', () => {
+    popUpButtonClose.addEventListener('click', () => {
       document.body.style.overflow = 'auto';
       document.body.style.paddingRight = '';
       popUpBg.classList.remove('active');
@@ -92,7 +121,15 @@ class Card {
         popUp.classList.remove('active');
       }
     });
-    popUp.append(popUpButton, image);
+    priceContainer.append(priceNow, priceLast);
+    brandContainer.append(brandName, brandDescription, priceContainer);
+    additionalInfo.append(
+      popUpButtonClose,
+      brandContainer,
+
+      popUpButtonBasket
+    );
+    popUp.append(image, additionalInfo);
     popUpBg.append(popUp);
     element.append(cardButton, popUpBg);
     this.parent.append(element);
