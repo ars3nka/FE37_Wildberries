@@ -1,5 +1,5 @@
 import createElement from './createElement.js';
-import { getData } from '../service/service';
+import { getData, cardPath } from '../service/service';
 
 class Card {
   constructor(
@@ -53,7 +53,7 @@ class Card {
     ><span>${this.description}</span>
     </p>
     </div>
-    <button class='btn_basket'>Добавить в корзину</button>
+    <button id=${this.id} class='btn_basket'>Добавить в корзину</button>
     `;
 
     const popUpBg = createElement('div', { className: 'popup__bg' });
@@ -97,6 +97,7 @@ class Card {
     });
     const popUpButtonBasket = createElement('button', {
       className: 'btn_basket',
+      id: `${this.id}`,
       textContent: 'Добавить в корзину',
     });
 
@@ -137,7 +138,6 @@ class Card {
   }
 }
 
-const cardPath = 'https://637910567419b414df8975c2.mockapi.io/card';
 getData(cardPath).then((products) => {
   products.forEach((card) => {
     new Card(
