@@ -1,3 +1,8 @@
+.section_cards {
+  position: relative;
+  margin: 0 20px;
+}
+
 h2 {
   font-size: 24px;
   line-height: 24px;
@@ -18,30 +23,31 @@ h2 {
     margin: 0 auto;
     padding: 5;
     max-width: 195px;
+    position: relative;
 
+    .preview__btn {
+      opacity: 0;
+      position: absolute;
+      z-index: 1;
+      font-size: 12px;
+      line-height: 16px;
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+      padding: 10px 11px;
+      border: none;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      transition: 0.5s;
+    }
     .card_container__image {
       display: flex;
       position: relative;
       overflow: hidden;
       border-radius: 5%;
 
-      .preview__btn {
-        opacity: 0;
-        position: absolute;
-        z-index: 1;
-        font-size: 12px;
-        line-height: 16px;
-        border-radius: 50px;
-        background-color: rgba(255, 255, 255, 0.9);
-        cursor: pointer;
-        padding: 10px 11px;
-        border: none;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        white-space: nowrap;
-        transition: 0.5s;
-      }
       .card_discount {
         position: absolute;
         left: 5px;
@@ -59,19 +65,7 @@ h2 {
     }
     .goods_card_price {
       margin-top: 10px;
-      .price_now {
-        font-size: 18px;
-        line-height: 24px;
-        margin-right: 10px;
-        font-weight: 700;
-        color: #242424;
-      }
-      .price_last {
-        font-size: 14px;
-        line-height: 20px;
-        color: #999;
-        text-decoration: line-through;
-      }
+
       .goods_card__description {
         text-overflow: ellipsis;
         overflow: hidden;
@@ -102,9 +96,136 @@ h2 {
       background-color: #cb11ab;
       border: 2px solid #cb11ab;
     }
+    .btn_basket:hover {
+      background-color: #e62fc8;
+      border: 2px solid #e62fc8;
+    }
   }
   .card:hover .preview__btn {
     opacity: 1;
     transition: 0.5s;
   }
+}
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all;
+  z-index: 2;
+}
+.popup__bg.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s all;
+  z-index: 3;
+}
+.popup {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  min-width: 900px;
+  padding: 25px;
+  transition: 0.5s all;
+
+  .image {
+    width: 50%;
+    height: 50%;
+  }
+  .container_info {
+    padding: 15 15 15 25;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .brand_container {
+      margin-bottom: 10px;
+    }
+    span {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+    .brand_name::after {
+      content: ' / ';
+    }
+  }
+  .popup_button {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    background-color: rgb(194, 194, 194);
+    clip-path: polygon(
+      20% 0%,
+      0% 20%,
+      30% 50%,
+      0% 80%,
+      20% 100%,
+      50% 70%,
+      80% 100%,
+      100% 80%,
+      70% 50%,
+      100% 20%,
+      80% 0%,
+      50% 30%
+    );
+  }
+}
+.popup.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+  border-radius: 10px;
+  max-width: 1000px;
+  max-height: 650px;
+  z-index: 2;
+
+  .price_now {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .price_container {
+    margin-top: 25px;
+  }
+  .btn_basket {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 11px 24px 13px;
+    font-weight: 600;
+  }
+  .btn_basket:hover {
+    background-color: #e62fc8;
+    border: 2px solid #e62fc8;
+  }
+}
+.price_now {
+  font-size: 18px;
+  line-height: 24px;
+  margin-right: 10px;
+  font-weight: 700;
+  color: #242424;
+}
+.price_last {
+  font-size: 14px;
+  line-height: 20px;
+  color: #999;
+  text-decoration: line-through;
+}
+.price_now::after {
+  content: ' p.';
+}
+.price_last::after {
+  content: ' p.';
 }

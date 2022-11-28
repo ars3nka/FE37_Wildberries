@@ -6,6 +6,9 @@ function createElement(type = 'div', options = {}) {
   if (options.className) {
     element.className = options.className;
   }
+  if (options.src) {
+    element.src = options.src;
+  }
 
   return element;
 }
