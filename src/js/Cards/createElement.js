@@ -9,6 +9,9 @@ function createElement(type = 'div', options = {}) {
   if (options.src) {
     element.src = options.src;
   }
+  if (options.id) {
+    element.id = options.id;
+  }
 
   return element;
 }

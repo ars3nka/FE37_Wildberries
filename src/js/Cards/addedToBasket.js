@@ -1,7 +1,6 @@
-import { getData } from "../service/service.js";
+import { getData, cardPath } from "../service/service.js";
 
 const modalBasketCardsWrapper = document.querySelector('.wrapper__basket_cards');
-const urlProductPath = 'https://637910567419b414df8975c2.mockapi.io/card';
 const modalPleaseRegister = document.querySelector('.modal_please_register_wrapper');
 
 window.addEventListener('click', (e) => {
@@ -10,7 +9,7 @@ window.addEventListener('click', (e) => {
     }
     if (e.target.className === 'btn_basket'){
         if (localStorage.length !== 0 || sessionStorage.length !== 0) {
-            getData(urlProductPath)
+            getData(cardPath)
             .then(cards => {
                 const checkedCard = cards.filter(card => card.id === e.target.id);
                 if (localStorage.length !== 0) {
