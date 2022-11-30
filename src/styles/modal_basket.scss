@@ -4,6 +4,23 @@
     margin: 5px;
 }
 
+.header__basket{
+    position: relative;
+}
+
+.basket_count{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 25px;
+    top: 27%;
+    border-radius: 50%;
+    z-index: 2;
+    color: #fff;
+    font-size: 12px;
+    background-color: #ec2ecdfd;
+}
+
 .modal__basket_title{
     padding: 20px 0;
 }
@@ -77,6 +94,39 @@
     right: 7px;
     bottom: 5px;
     color: #6e7376;
+}
+
+.basket_card_count{
+    display: flex;
+    width: 60px;
+    height: 18px;
+    border-radius: 3px;
+    justify-content: space-between;
+    position: absolute;
+    left: 90px;
+    bottom: 5px;
+    color: #6e7376;
+    background-color: #d4d8da;
+    font-size: 14px;
+}
+
+.items__control{
+    width: 20px;
+    height: 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.items__control:hover{
+    background-color: #cb11ab;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.items__current{
+    width: 25px;
+    font-size: 14px;
+    text-align: center;
 }
 
 .modal_basket_total_wrapper{

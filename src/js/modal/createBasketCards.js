@@ -4,12 +4,14 @@ export class BasketCard{
         src,
         description,
         priceNow,
+        amount,
         selector
     ) {
         this.id = id;
         this.src = src;
         this.description = description;
         this.priceNow = priceNow;
+        this.amount = amount;
         this.selector = selector
     }
     renderBasketCardItem() {
@@ -25,7 +27,12 @@ export class BasketCard{
                 <p class="basket_card__title">
                 ${this.description}
                 </p>
-                <div class="basket_card__price">${this.priceNow}</div>
+                <div class="basket_card_count">
+                <p class="items__control control_minus" data-action="minus">-</p>
+                <p class="items__current" data-counter>${this.amount}</p>
+                <p class="items__control control_plus" data-action="plus">+</p>
+                </div>
+                <div class="basket_card__price">${+(this.priceNow * this.amount).toFixed(2)}</div>
         `
         this.selector.append(basketCardItem);
     }

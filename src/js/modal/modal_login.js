@@ -1,4 +1,5 @@
 import Inputmask from 'inputmask';
+import { userBasketCounter } from './userBasketCounter';
 
 // Модалка авторизации
 
@@ -14,6 +15,7 @@ const modalCheckbox = document.querySelector('input[type=checkbox]');
 let inputPhoneMask = new Inputmask('(99) 999-99-99');
 
 inputPhoneMask.mask(inputUserPhone);
+userBasketCounter();
 
 export function toggleModal() {
   modalWrapper.classList.toggle('modal__hide');
@@ -66,6 +68,7 @@ inputButton.addEventListener('click', (e) => {
     inputUserPhone.value = '';
     modalWrapper.classList.add('modal__hide');
     document.body.style.overflow = ''; 
+    userBasketCounter();
   } else {
     inputValidatorDiv.classList.remove('modal__input_validator');
   }

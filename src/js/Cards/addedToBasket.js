@@ -1,7 +1,28 @@
 import { getData, cardPath } from "../service/service.js";
+import { userBasketCounter } from "../modal/userBasketCounter.js"
 
 const modalBasketCardsWrapper = document.querySelector('.wrapper__basket_cards');
 const modalPleaseRegister = document.querySelector('.modal_please_register_wrapper');
+
+function checkItemInBasket(storage, checkedItem) {
+    const userArray = JSON.parse(storage.getItem('userBasket'));
+    const findItem = userArray.find(item => item.id === checkedItem[0].id)
+    if (findItem) {
+        const newUserArray = userArray.map(item => {
+            if (item.id === findItem.id) {
+                item.amount += 1;
+                return item
+            } else {
+                return item
+            }
+        })
+        storage.setItem('userBasket', JSON.stringify(newUserArray))
+    } else {
+        checkedItem[0].amount = 1;
+        userArray.push(checkedItem[0]);
+        storage.setItem('userBasket', JSON.stringify(userArray))
+    }
+}
 
 window.addEventListener('click', (e) => {
     if (!modalPleaseRegister.classList.contains('modal_please_register_hide')) {
@@ -13,15 +34,12 @@ window.addEventListener('click', (e) => {
             .then(cards => {
                 const checkedCard = cards.filter(card => card.id === e.target.id);
                 if (localStorage.length !== 0) {
-                    const userArray = JSON.parse(localStorage.getItem('userBasket'));
-                    userArray.push(checkedCard[0]);
-                    localStorage.setItem('userBasket', JSON.stringify(userArray));
+                    checkItemInBasket(localStorage, checkedCard)
                 } else if (sessionStorage.length !== 0){
-                    const userArray = JSON.parse(sessionStorage.getItem('userBasket'));
-                    userArray.push(checkedCard[0]);
-                    sessionStorage.setItem('userBasket', JSON.stringify(userArray));
+                    checkItemInBasket(sessionStorage, checkedCard)
                 }
                 modalBasketCardsWrapper.innerHTML = '';
+                userBasketCounter()
     });
         } else {
             modalPleaseRegister.classList.remove('modal_please_register_hide');
