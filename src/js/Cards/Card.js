@@ -10,6 +10,8 @@ class Card {
     brand,
     description,
     parentSelector,
+    image1,
+    image2,
     id
   ) {
     this.src = src;
@@ -19,6 +21,8 @@ class Card {
     this.brand = brand;
     this.description = description;
     this.parent = document.querySelector(parentSelector);
+    this.image1 = image1;
+    this.image2 = image2;
     this.id = id;
     this.calcDiscount();
   }
@@ -58,10 +62,27 @@ class Card {
 
     const popUpBg = createElement('div', { className: 'popup__bg' });
     const popUp = createElement('div', { className: 'popup' });
+    const popUpSlider = createElement('div', { className: 'popup_slider' });
+    const popUpButtonPrev = createElement('button', {
+      className: 'popup_button_prev',
+    });
+    const popUpButtonNext = createElement('button', {
+      className: 'popup_button_next',
+    });
+    const sliderLine = createElement('div', { className: 'slider_line' });
     const image = createElement('img', {
       className: 'image',
       src: `${this.src}`,
     });
+    const popUpImage1 = createElement('img', {
+      className: 'image',
+      src: `${this.image1}`,
+    });
+    const popUpImage2 = createElement('img', {
+      className: 'image',
+      src: `${this.image2}`,
+    });
+
     const additionalInfo = createElement('div', {
       className: 'container_info',
     });
@@ -123,15 +144,38 @@ class Card {
         popUp.classList.remove('active');
       }
     });
+    let offset = 0;
+    popUpButtonPrev.disabled = true;
+    popUpButtonPrev.classList.add('disabled_button');
+    popUpButtonPrev.addEventListener('click', () => {
+      offset += 450;
+      if (offset >= 0) {
+        popUpButtonPrev.disabled = true;
+        popUpButtonPrev.classList.add('disabled_button');
+      } else if (offset >= -450) {
+        popUpButtonNext.disabled = false;
+        popUpButtonNext.classList.remove('disabled_button');
+      }
+      sliderLine.style.left = offset + 'px';
+    });
+    popUpButtonNext.addEventListener('click', () => {
+      offset -= 450;
+      if (offset <= -900) {
+        popUpButtonNext.disabled = true;
+        popUpButtonNext.classList.add('disabled_button');
+      } else if (offset < 0) {
+        popUpButtonPrev.disabled = false;
+        popUpButtonPrev.classList.remove('disabled_button');
+      }
+      sliderLine.style.left = offset + 'px';
+    });
     priceContainer.append(priceNow, priceLast);
     brandContainer.append(brandName, brandDescription, priceContainer);
-    additionalInfo.append(
-      popUpButtonClose,
-      brandContainer,
+    additionalInfo.append(popUpButtonClose, brandContainer, popUpButtonBasket);
 
-      popUpButtonBasket
-    );
-    popUp.append(image, additionalInfo);
+    sliderLine.append(image, popUpImage1, popUpImage2);
+    popUpSlider.append(sliderLine, popUpButtonPrev, popUpButtonNext);
+    popUp.append(popUpSlider, additionalInfo);
     popUpBg.append(popUp);
     element.append(cardButton, popUpBg);
     this.parent.append(element);
@@ -148,6 +192,8 @@ getData(cardPath).then((products) => {
       card.brand,
       card.description,
       card.parentSelector,
+      card.image1,
+      card.image2,
       card.id
     ).render();
   });
