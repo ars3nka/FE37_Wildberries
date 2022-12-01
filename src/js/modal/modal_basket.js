@@ -1,4 +1,6 @@
 import { BasketCard } from './createBasketCards.js'; 
+import { userBasketCounter } from './userBasketCounter.js';
+
 
 function modalBasket() { 
     const modalBasketWrapper = document.querySelector('#modal_basket'); 
@@ -44,9 +46,10 @@ function modalBasket() {
                     card.src,  
                     card.description,  
                     card.priceNow,  
-                    modalBasketCardsWrapper 
+                    card.amount,
+                    modalBasketCardsWrapper
                 ).renderBasketCardItem(); 
-                count += +card.priceNow; 
+                count += +(card.priceNow * card.amount); 
                 showButtons(); 
             }  
         }); 
@@ -79,12 +82,43 @@ function modalBasket() {
         hideButtons(); 
         getDataFromStorage(storage); 
     } 
+
+    function basketCountPlus(storage, event){
+        const userArray = JSON.parse(storage.getItem('userBasket'));
+        const findItem = userArray.find(item => item.id === event.target.offsetParent.offsetParent.children[0].id);
+        const newUserArray = userArray.map(item => {
+            if (item.id === findItem.id) {
+                item.amount += 1;
+                return item
+            } else {
+                return item
+            }
+        })
+        getUserBacketItems(newUserArray);
+        storage.setItem('userBasket', JSON.stringify(newUserArray))
+    }
+
+    function basketCountMinus(storage, event){
+        const userArray = JSON.parse(storage.getItem('userBasket'));
+        const findItem = userArray.find(item => item.id === event.target.offsetParent.offsetParent.children[0].id);
+        const newUserArray = userArray.map(item => {
+            if (item.id === findItem.id && item.amount > 1) {
+                item.amount -= 1;
+                return item
+            } else {
+                return item
+            }
+        })
+        getUserBacketItems(newUserArray);
+        storage.setItem('userBasket', JSON.stringify(newUserArray))
+    }
     
     modalBasketOpen.addEventListener('click', () => { 
         hideButtons(); 
         const userProductsInLocalStorage = JSON.parse(localStorage.getItem('userBasket')); 
         const userProductsInSessionStorage = JSON.parse(sessionStorage.getItem('userBasket')); 
         renderUserBacketItems(userProductsInLocalStorage, userProductsInSessionStorage); 
+        userBasketCounter();
     }); 
 
     modalBasketClose.addEventListener('click', toggleBasketModal); 
@@ -112,19 +146,23 @@ function modalBasket() {
             getDataFromStorage(sessionStorage); 
         } 
         hideButtons(); 
+        userBasketCounter();
     }); 
     
     modalBasketOrderButton.addEventListener('click', () => { 
         if (localStorage.length !== 0 || sessionStorage.length !== 0){ 
             if (localStorage.getItem('userBasket')){ 
                 showUserOrder(localStorage); 
+                userBasketCounter();
             } else if (sessionStorage.getItem('userBasket')){ 
                 showUserOrder(sessionStorage); 
+                userBasketCounter();
             } 
         } else { 
             modalBasketCardsWrapper.innerHTML = '<h2>В вашей корзине пусто!</h2>'; 
             modalBasketTotalPrice.innerHTML = '';  
             showButtons(); 
+            userBasketCounter();
         } 
     }); 
 
@@ -141,8 +179,27 @@ function modalBasket() {
                 sessionStorage.setItem('userBasket', JSON.stringify(userProductsInStorage)); 
                 getUserBacketItems(userProductsInStorage); 
             } 
+            userBasketCounter();
         }  
     }); 
+
+    window.addEventListener('click', (e) => {
+        if (e.target.dataset.action === 'plus') {
+            if (localStorage.length !== 0) {
+                basketCountPlus(localStorage, e)
+            } else if (sessionStorage.length !== 0) {
+                basketCountPlus(sessionStorage, e)
+            }
+        }
+
+        if (e.target.dataset.action === 'minus') {
+            if (localStorage.length !== 0) {
+                basketCountMinus(localStorage, e)
+            } else if (sessionStorage.length !== 0) {
+                basketCountMinus(sessionStorage, e)
+            }
+        }
+    })
 } 
 
 export default modalBasket;
