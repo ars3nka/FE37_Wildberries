@@ -6,35 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="icon"
-      href="./images/favicon_wb.ico"
-      type="image/vnd.microsoft.icon"
-    />
-    <link rel="stylesheet" href="styles/styles.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="./images/favicon_wb.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="styles/styles.scss"/>
     <script type="module" src="js/index.js"></script>
-    <script
-      defer
-      src="https://kit.fontawesome.com/3a445c3d46.js"
-      crossorigin="anonymous"
-    ></script>
+    <script defer src="https://kit.fontawesome.com/3a445c3d46.js" crossorigin="anonymous"></script>
     <title>Wildberries - модный интернет магазин</title>
   </head>
   <body>
+
     <header class="header">
       <a href="" class="header__link">
-        <img
-          src="images/logo_wb.svg"
-          alt="Wildberries Logo"
-          class="header__link-image"
-        />
+        <img src="images/logo_wb.svg" alt="Wildberries Logo" class="header__link-image"/>
       </a>
       <input type="search" class="header__search" placeholder="Я ищу..." />
       <button class="header__profile">
@@ -44,6 +27,9 @@
       <button class="header__basket">
         <img src="images/basket_wb.svg" alt="basket image" />
         <span>Корзина</span>
+        <div class="basket_count modal__hide">
+          <!-- <p class="basket_count_item">0</p> -->
+        </div>
       </button>
     </header>
 
@@ -66,13 +52,7 @@
                   <option class="Armenia">+374</option>
                   <option class="Georgia">+995</option>
                 </select>
-                <input
-                  name="phone"
-                  type="phone"
-                  class="modal__input"
-                  id="user__phone"
-                  placeholder="(__) ___-__-__"
-                />
+                <input name="phone" type="phone" class="modal__input" id="user__phone" placeholder="(__) ___-__-__"/>
               </div>
               <div class="get__code">
                 <button class="get__code">Получить код</button>
@@ -83,30 +63,18 @@
             </div>
           </form>
           <div class="other__pc">
-            <input
-              class="other__pc_checkbox"
-              type="checkbox"
-              id="other__pc"
-              name="other__pc"
-              checked
-            />
+            <input class="other__pc_checkbox" type="checkbox" id="other__pc" name="other__pc" checked />
             <label for="other__pc">Чужой компьютер</label>
           </div>
           <div>
             <div class="specification">
               Согласен с условиями
-              <a
-                target="_blank"
-                href="https://www.wildberries.by/services/pravila-polzovaniya-torgovoy-ploshchadkoy"
-              >
+              <a target="_blank" href="https://www.wildberries.by/services/pravila-polzovaniya-torgovoy-ploshchadkoy">
                 <span>Публичной оферты</span>
               </a>
               и
               <div class="specification specification__without_icons">
-                <a
-                  target="_blank"
-                  href="https://www.wildberries.by/services/vozvrat-tovara"
-                >
+                <a target="_blank" href="https://www.wildberries.by/services/vozvrat-tovara" >
                   <span>правилами возврата</span>
                 </a>
               </div>
@@ -149,13 +117,12 @@
     </div>
     <!-- modal bucket end -->
     <div class="modal_please_register_wrapper modal_please_register_hide">
-      <div class="modal_please_register">
-        <h2>
-          Пожалуйста, войдите, чтобы воспользоваться функционалом корзины!
-        </h2>
-      </div>
+    <div class="modal_please_register">
+      <h2>Пожалуйста, войдите, чтобы воспользоваться функционалом корзины!</h2>
+    </div>
     </div>
     <main class="main">
+
       <div class="swiper">
         <div class="swiper__line">
           <img src="images/swiper/swiper_1.jpg" alt="Swiper Slide" />
@@ -185,6 +152,8 @@
         <h2>Хиты продаж</h2>
         <ul class="container_cards"></ul>
       </section>
+
     </main>
+
   </body>
 </html>
