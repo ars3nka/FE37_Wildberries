@@ -1,5 +1,7 @@
 import createElement from './createElement.js';
 import { getData, cardPath } from '../service/service';
+import { sliderPopUp } from '../components/sliderPopUp.js';
+import { popUpListeners } from '../components/popUpListeners.js';
 
 class Card {
   constructor(
@@ -122,53 +124,10 @@ class Card {
       textContent: 'Добавить в корзину',
     });
 
-    cardButton.addEventListener('click', () => {
-      document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = '17px';
+    popUpListeners(cardButton, popUpBg, popUp, popUpButtonClose);
 
-      popUpBg.classList.add('active');
-      popUp.classList.add('active');
-    });
+    sliderPopUp(popUpButtonPrev, popUpButtonNext, sliderLine);
 
-    popUpButtonClose.addEventListener('click', () => {
-      document.body.style.overflow = 'auto';
-      document.body.style.paddingRight = '';
-      popUpBg.classList.remove('active');
-      popUp.classList.remove('active');
-    });
-    document.addEventListener('click', (e) => {
-      if (e.target === popUpBg) {
-        document.body.style.overflow = 'auto';
-        document.body.style.paddingRight = '';
-        popUpBg.classList.remove('active');
-        popUp.classList.remove('active');
-      }
-    });
-    let offset = 0;
-    popUpButtonPrev.disabled = true;
-    popUpButtonPrev.classList.add('disabled_button');
-    popUpButtonPrev.addEventListener('click', () => {
-      offset += 450;
-      if (offset >= 0) {
-        popUpButtonPrev.disabled = true;
-        popUpButtonPrev.classList.add('disabled_button');
-      } else if (offset >= -450) {
-        popUpButtonNext.disabled = false;
-        popUpButtonNext.classList.remove('disabled_button');
-      }
-      sliderLine.style.left = offset + 'px';
-    });
-    popUpButtonNext.addEventListener('click', () => {
-      offset -= 450;
-      if (offset <= -900) {
-        popUpButtonNext.disabled = true;
-        popUpButtonNext.classList.add('disabled_button');
-      } else if (offset < 0) {
-        popUpButtonPrev.disabled = false;
-        popUpButtonPrev.classList.remove('disabled_button');
-      }
-      sliderLine.style.left = offset + 'px';
-    });
     priceContainer.append(priceNow, priceLast);
     brandContainer.append(brandName, brandDescription, priceContainer);
     additionalInfo.append(popUpButtonClose, brandContainer, popUpButtonBasket);
