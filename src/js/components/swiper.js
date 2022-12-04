@@ -10,7 +10,6 @@ let count = 0;
 let width = 0;
 
 function resizeSwiper() {
-  console.log('resize swiper');
   width = swiper.offsetWidth;
   swiperLine.style.width = width * images.length + 'px';
   images.forEach((image) => {
@@ -55,7 +54,7 @@ function paginationActive() {
 
 resizeSwiper();
 
-window.addEventListener('resize', resizeSwiper);
+window.addEventListener('resize', resizeSwiper); 
 
 swiperNextBtn.addEventListener('click', () => {
   swiperRight();
