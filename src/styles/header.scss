@@ -5,6 +5,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0px 80px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
   .header__search, .header__profile, .header__basket, .header__link {
     height: 60%;
     margin: 0px 20px;

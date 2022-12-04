@@ -83,6 +83,12 @@ select{
     border-radius: 10px;
     color: #6e7376;
     margin-bottom: 15px;
+    transition: all ease-in-out 0.15s;
+}
+
+.get__code > button:hover {
+    background-color:#CB11AB;
+    color: white;
 }
 
 .modal__input_validator{

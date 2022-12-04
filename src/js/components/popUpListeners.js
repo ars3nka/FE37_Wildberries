@@ -5,6 +5,9 @@ export function popUpListeners(cardButton, popUpBg, popUp, popUpButtonClose) {
 
     popUpBg.classList.add('active');
     popUp.classList.add('active');
+
+    resizePopupSwiper();
+    window.addEventListener('transitionend', resizePopupSwiper);
   });
 
   popUpButtonClose.addEventListener('click', () => {
@@ -21,4 +24,11 @@ export function popUpListeners(cardButton, popUpBg, popUp, popUpButtonClose) {
       popUp.classList.remove('active');
     }
   });
+}
+
+function resizePopupSwiper() {
+  const image = document.querySelector('.active .image');
+  const sliderLine = document.querySelector('.active .popup_slider');
+  sliderLine.style.width = image.clientWidth + 'px';
+  console.log('resize popup swiper');
 }
