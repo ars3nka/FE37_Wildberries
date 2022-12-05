@@ -54,6 +54,14 @@ window.addEventListener('click', (e) => {
   }
   if (e.target.className === 'btn_basket') {
     if (localStorage.length !== 0 || sessionStorage.length !== 0) {
+
+      e.target.classList.add('btn_basket_added');
+      document.querySelector('.btn_basket_added').textContent = 'Товар добавлен';
+      setTimeout(()=> {
+        document.querySelector('.btn_basket_added').textContent = 'Добавить в корзину';
+        e.target.classList.remove('btn_basket_added');
+      }, 1500);
+
       getData(cardPath).then((cards) => {
         const checkedCard = cards.filter((card) => card.id === e.target.id);
         if (localStorage.length !== 0) {

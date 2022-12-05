@@ -1,7 +1,6 @@
 export function popUpListeners(cardButton, popUpBg, popUp, popUpButtonClose) {
   cardButton.addEventListener('click', () => {
     document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = '17px';
 
     popUpBg.classList.add('active');
     popUp.classList.add('active');
@@ -28,7 +27,20 @@ export function popUpListeners(cardButton, popUpBg, popUp, popUpButtonClose) {
 
 function resizePopupSwiper() {
   const image = document.querySelector('.active .image');
+  const images = document.querySelectorAll('.active .image');
   const sliderLine = document.querySelector('.active .popup_slider');
-  sliderLine.style.width = image.clientWidth + 'px';
-  console.log('resize popup swiper');
+  const containerInfo = document.querySelector('.active .container_info');
+
+  if (sliderLine) {
+    sliderLine.style.width = image.clientWidth + 'px';
+
+    if (window.screen.width < 600) {
+      sliderLine.style.width = containerInfo.clientWidth + 'px';
+      sliderLine.style.height = (containerInfo.clientWidth / 3 * 4) + 'px';
+      images.forEach((image) => {
+        image.style.width = containerInfo.clientWidth + 'px';
+        image.style.height = (containerInfo.clientWidth / 3 * 4) + 'px';
+      });
+    }
+  }
 }

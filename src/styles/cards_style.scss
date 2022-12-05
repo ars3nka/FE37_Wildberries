@@ -95,10 +95,15 @@ h2 {
       padding: 3px;
       background-color: #cb11ab;
       border: 2px solid #cb11ab;
+      transition: all ease-in-out 0.3s;
     }
     .btn_basket:hover {
       background-color: #e62fc8;
       border: 2px solid #e62fc8;
+    }
+    .btn_basket_added {
+      background-color: #35aa5c;
+      border: 2px solid transparent;
     }
   }
   .card:hover .preview__btn {
